@@ -1,18 +1,93 @@
 {
-    "akuns": [
-      {
-        "id": 1,
-        "username": "admin",
-        "password": "123",
-        "role": "admin"
-      },
-      {
-        "id": 2,
-        "username": "orang",
-        "password": "123",
-        "role": "user"
-      }
-
-    ]
+  "akuns": [
+    {
+      "id": 1,
+      "username": "admin",
+      "password": "123",
+      "role": "admin"
+    },
+    {
+      "id": 2,
+      "username": "orang",
+      "password": "123",
+      "role": "user"
+    }
+  ],
+  "accs": [
+    {
+      "name": "Kawasaki H2R",
+      "bb": "Pertamax Turbo",
+      "cc": "1000cc",
+      "image": "https://images.autofun.co.id/file1/98f4d79923774641ac723eae8b857500_1125x630.jpg",
+      "id": 1
+    },
+    {
+      "name": "Honda Vario 160",
+      "bb": "Pertamax",
+      "cc": "160cc",
+      "image": "https://imgx.gridoto.com/crop/82x84:591x405/700x465/photo/2022/07/13/modifikasi-honda-vario-160-6jpg-20220713042820.jpg",
+      "id": 2
+    },
+    {
+      "name": "Yamaha R25",
+      "bb": "Pertamax Turbo",
+      "cc": "250cc",
+      "image": "https://i0.wp.com/motoblast.org/wp-content/uploads/2020/04/render-R25-v3-1.jpg?fit=1600%2C1065&ssl=1",
+      "id": 3
+    },
+    {
+      "name": "Kawasaki ZX-25R",
+      "bb": "Pertamax Turbo",
+      "cc": "250cc",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Kawasaki_Ninja_ZX-25R_mid-year_2021.jpg",
+      "id": 4
+    },
+    {
+      "name": "Yamaha R15 v4",
+      "bb": "Pertamax",
+      "cc": "150cc",
+      "image": "https://awsimages.detik.net.id/community/media/visual/2021/12/01/yamaha-r15m-1.jpeg?w=4770",
+      "id": 5
+    }
+  ],
+  "products": [
+    {
+      "name": "Kawasaki H2R",
+      "bb": "Pertamax Turbo",
+      "cc": "1000cc",
+      "id": 1
+    },
+    {
+      "name": "Honda Vario 160",
+      "bb": "Pertamax",
+      "cc": "160cc",
+      "id": 2
+    },
+    {
+      "name": "Kawasaki ZX-25R",
+      "bb": "Pertamax Turbo",
+      "cc": "250cc",
+      "id": 4
+    },
+    {
+      "name": "Yamaha R15 v4",
+      "bb": "Pertamax",
+      "cc": "150cc",
+      "id": 5
+    }
+  ],
+  "products2": [
+    {
+      "name": "Nissan Skyline R34",
+      "bb": "1999",
+      "cc": "2.600",
+      "id": 1
+    },
+    {
+      "name": "Toyota GR Supra",
+      "bb": "2020",
+      "cc": "2.998cc",
+      "id": 2
+    }
+  ]
 }
-   
