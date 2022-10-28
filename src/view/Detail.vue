@@ -1,6 +1,61 @@
 <template>
-  <div id="home">
+  <div id="/detail">
     <NavBar />
+
+    <!-- Button trigger modal -->
+    <button
+      type="button"
+      class="btn btn-primary"
+      data-bs-toggle="modal"
+      data-bs-target="#exampleModal3"
+    >
+      Launch demo modal
+    </button>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="dataahh"
+      tabindex="-1"
+      aria-labelledby="exampleModal3Label"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModal3Label">
+              Modal title
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <!-- Tabel Detail -->
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Merk Modal</th>
+                  <th scope="col">Tahun Pembuatan</th>
+                  <th scope="col">CC</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>{{ form.name }}</td>
+                  <td>{{ form.bb }}</td>
+                  <td>{{ form.cc }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+         <!-- End Tabel Detail -->
+        </div>
+      </div>
+    </div>
 
     <div class="induk" style="background-color: white">
       <!-- Modal Add -->
@@ -10,7 +65,7 @@
         <div class="btn11">
           <button
             type="button"
-            class="btn btn-primary"
+            class="btn btn-success"
             data-bs-toggle="modal"
             data-bs-target="#exampleModal"
           >
@@ -30,8 +85,8 @@
             <div class="modal-content">
               <div class="modal-header">
                 <h1 class="modal-title fs-5" id="exampleModalLabel">
-                  form <span v-show="updateSubmitjakarta">tambah</span>
-                  <span v-show="updateSubmitjakarta">update</span>
+                  form product<span v-show="!updateSubmitproduct"> Tambah</span>
+                  <span v-show="updateSubmitproduct"> Update</span>
                 </h1>
                 <button
                   type="button"
@@ -46,7 +101,7 @@
                   <div class="product">
                     <input type="hidden" v-model="form.id" />
                     <div>
-                      <label for="">Nama</label><br />
+                      <label for="">Nama Kendaraan</label><br />
                       <input type="text" v-model="form.name" required />
                     </div>
                     <br />
@@ -56,12 +111,11 @@
                     </div>
                     <br />
                     <div>
-                      <label for="">CC</label><br />
+                      <label for="">Kapasitas Mesin</label><br />
 
                       <input type="text" v-model="form.cc" required />
                     </div>
                     <br />
-                    
                   </div>
                   <div class="btn1">
                     <button
@@ -77,138 +131,7 @@
                       v-show="updateSubmit"
                       @click="update(form)"
                     >
-                      edit
-                    </button>
-                    <button
-                      type="button"
-                      class="btn btn-secondary"
-                      data-bs-dismiss="modal"
-                      @click="close"
-                    >
-                      Close
-                    </button>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div><!-- Database -->
-      <table class="table" border="1" style="width: 98%">
-        <tr class="tr">
-          <th>No</th>
-          <th>Name</th>
-          <th>Bahan Bakar</th>
-          <th>Kapasitas Mesin</th>
-          <th>action</th>
-        </tr><tr class="tr" v-for="(product, index) in products" :key="product.id">
-          <td>
-            <span class="bb"> {{ index + 1 }}</span> &#160;
-          </td>
-          <td>
-            <span class="bb"> {{ product.name }}</span> &#160;
-          </td>
-          <td>
-            <span class="bb">{{ product.bb }}</span> &#160;
-          </td>
-          <td>
-            <span class="bb">{{ product.cc }}</span> &#160;
-          </td>
-      
-
-          <td class="btn2">
-            <a href="#exampleModalLabel">
-              <button
-                data-bs-toggle="modal"
-                data-bs-target="#exampleModal"
-                class="aa"
-                @click="edit(product)"
-              >
-                <i class="fas fa-wrench"></i>Edit
-              </button></a
-            >
-            <button class="aa" @click="del(product)">
-              <i class="fas fa-trash-alt"></i>Delete
-            </button>
-          </td>
-        </tr>
-      </table>
-
-      <!-- table 2 -->
-      <div>
-        <!-- Button trigger modal -->
-        <br />
-        <div class="btn11">
-          <button
-            type="button"
-            class="btn btn-primary"
-            data-bs-toggle="modal"
-            data-bs-target="#product2"
-          >
-            Add
-          </button>
-        </div>
-        <br />
-        <!-- Modal -->
-        <div
-          class="modal fade"
-          id="product2"
-          tabindex="-1"
-          aria-labelledby="exampleModalLabel"
-          aria-hidden="true"
-        >
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">
-                  formbali <span v-show="updateSubmitjakarta">tambah</span>
-                  <span v-show="updateSubmitjakarta">update</span>
-                </h1>
-                <button
-                  type="button"
-                  class="btn-close"
-                  data-bs-dismiss="modal"
-                  aria-label="Close"
-                ></button>
-              </div>
-              <div class="modal-body">
-                <!-- masukan -->
-                <form id="atas" @submit.prevent="addbali">
-                  <div class="product">
-                    <input type="hidden" v-model="formbali.id" />
-                    <div>
-                      <label for="">Nama</label><br />
-                      <input type="text" v-model="formbali.name" required />
-                    </div>
-                    <br />
-                    <div>
-                      <label for="">Tahun</label><br />
-                      <input type="text" v-model="formbali.bb" required />
-                    </div>
-                    <br />
-                    <div>
-                      <label for="">Kapasitas MEsin</label><br /><input type="text" v-model="formbali.cc" required />
-                    </div>
-                    <br />
-                    
-                   
-                    <br />
-                  </div>
-                  <div class="btn1">
-                    <button
-                      class="btn btn-secondary"
-                      type="submit"
-                      v-show="!updateSubmit"
-                    >
-                      Tambahkan
-                    </button>
-                    <!-- jika tidak update maka tombol update tidak muncul -->
-                    <button
-                      type="button"
-                      v-show="updateSubmit"
-                      @click="update(form)"
-                    >
-                      edit
+                      UPDATE
                     </button>
                     <button
                       type="button"
@@ -225,52 +148,212 @@
           </div>
         </div>
       </div>
-
       <!-- Database -->
       <table class="table" border="1" style="width: 98%">
         <tr class="tr">
-          <th>no</th>
-          <th>Name</th>
+          <th>No</th>
+          <th>name</th>
           <th>Tahun</th>
-          <th>CC</th>
+          <th>cc</th>
           <th>action</th>
         </tr>
-
-        <tr class="tr" v-for="(product2, index) in products2" :key="product2.id">
+        <tr class="tr" v-for="(product, index) in products" :key="product.id">
           <td>
             <span class="bb"> {{ index + 1 }}</span> &#160;
           </td>
           <td>
-            <span class="bb"> {{ product2.name }}</span> &#160;
+            <span class="bb"> {{ product.name }}</span> &#160;
           </td>
           <td>
-            <span class="bb">{{ product2.bb }}</span> &#160;
+            <span class="bb">{{ product.bb }}</span> &#160;
           </td>
           <td>
-            <span class="bb">{{ product2.cc }}</span> &#160;
+            <span class="bb">{{ product.cc }}</span> &#160;
           </td>
-         
 
           <td class="btn2">
-            <a href="#exampleModalLabel">
-              <button
-                data-bs-toggle="modal"
-                data-bs-target="#product2"
-                class="aa"
-                @click="edit(product2)"
-              >
-                <i class="fas fa-wrench"></i>Edit
-              </button></a
+            <!-- Detail -->
+            <button
+              data-bs-toggle="modal"
+              data-bs-target="#dataahh"
+              type="button"
+              @click="productDetail(product)"
+              class="btn btn-success"
             >
-            <button class="aa" @click="del(product2)">
+              Detail
+            </button>
+            <!--End  Detail -->
+
+            <!-- Edit -->
+            <button
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+              class="aa"
+              @click="edit(product)">
+              <a href="#exampleModalLabel">
+                <i class="fas fa-wrench"></i>Edit
+              </a>
+            </button>
+            <!-- End Edit -->
+
+            <!-- Delete -->
+            <button class="aa" @click="del(product)">
               <i class="fas fa-trash-alt"></i>Delete
             </button>
+            <!--End Delete -->
           </td>
         </tr>
       </table>
-      <a href="../view/Home.vue"
-        ><div class="kembali"><button>kembali</button></div></a
-      >
+
+      <!-- table 2 -->
+      <div>
+        <!-- Button trigger modal -->
+        <br />
+        <div class="btn11">
+          <button
+            type="button"
+            class="btn btn-success"
+            data-bs-toggle="modal"
+            data-bs-target="#mobil"
+          >
+            Add
+          </button>
+        </div>
+        <br />
+        <!-- Modal -->
+        <div
+          class="modal fade"
+          id="mobil"
+          tabindex="-1"
+          aria-labelledby="#mobil"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="mobil">
+                  Form Mobil <span v-show="!updateSubmitmobil">tambah</span>
+                  <span v-show="updateSubmitmobil">update</span>
+                </h1>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <!-- masukan -->
+                <form id="atas" @submit.prevent="addmobil">
+                  <input type="hidden" v-model="mobil.id" />
+                  <div>
+                    <label for="">name/kab</label><br />
+                    <input type="text" v-model="mobil.name" required />
+                  </div>
+                  <br />
+                  <div>
+                    <label for="">Luas</label><br />
+                    <input type="text" v-model="mobil.bb" required />
+                  </div>
+                  <br />
+                  <div>
+                    <label for="">cc kec.</label><br />
+                    <input type="text" v-model="mobil.cc" required />
+                  </div>
+                  <br />
+
+                  <div class="btn1">
+                    <button
+                      class="btn btn-secondary"
+                      type="submit"
+                      v-show="!updateSubmitmobil"
+                    >
+                      Tambahkan
+                    </button>
+                    <!-- jika tidak update maka tombol update tidak muncul -->
+                    <button
+                      type="button"
+                      v-show="updateSubmitmobil"
+                      @click="updatemobil(mobil)"
+                      data-bs-target="#mobil"
+                    >
+                      UPDATE
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-bs-dismiss="modal"
+                      @click="close"
+                    >
+                      close
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Database -->
+      <table class="table" border="1" style="width: 98%">
+        <tr class="tr">
+          <th>No</th>
+          <th>Nama</th>
+          <th>luas</th>
+          <th>cc</th>
+          <th>action</th>
+        </tr>
+
+        <tr class="tr" v-for="(mobil, index) in mobils" :key="mobil.id">
+          <td>
+            <span class="bb"> {{ index + 1 }}</span> &#160;
+          </td>
+          <td>
+            <span class="bb"> {{ mobil.name }}</span> &#160;
+          </td>
+          <td>
+            <span class="bb">{{ mobil.bb }}</span> &#160;
+          </td>
+          <td>
+            <span class="bb">{{ mobil.cc }}</span> &#160;
+          </td>
+
+          <td class="btn2">
+            <!-- Detail -->
+            <button
+              data-bs-toggle="modal"
+              data-bs-target="#dataahh"
+              type="button"
+              @click="mobilDetail(mobil)"
+              class="btn btn-success"
+            >
+              Detail
+            </button>
+           <!-- End Detail -->
+
+           <!-- Edit -->
+            <button
+              data-bs-toggle="modal"
+              data-bs-target="#mobil"
+              class="aa"
+              @click="editmobil(mobil)"
+            >
+              <a href="#exampleModalLabel">
+                <i class="fas fa-wrench"></i>Edit
+              </a>
+            </button>
+            <!-- End Edit -->
+
+            <!-- Delete -->
+            <button class="aa" @click="delmobil(mobil)">
+              <i class="fas fa-trash-alt"></i>Delete
+            </button>
+            <!-- End Delete -->
+          </td>
+        </tr>
+      </table>
+      <a href="../view/Home.vue"></a>
     </div>
   </div>
 </template>
@@ -279,7 +362,7 @@
 import axios from "axios";
 import NavBar from "../components/Navbar.vue";
 export default {
-  name: "HomePage",
+  name: "DetailVue",
   components: {
     NavBar,
   },
@@ -288,7 +371,7 @@ export default {
       this.$router.push("/");
     }
     this.load();
-    this.loadbali();
+    this.loadmobil();
   },
   data() {
     return {
@@ -297,21 +380,17 @@ export default {
         name: "",
         bb: "",
         cc: "",
-        iconkota: "",
-        image: "",
       },
       products: "",
       updateSubmit: false,
-      formbali: {
+      mobil: {
         id: "",
         name: "",
         bb: "",
         cc: "",
-        iconkota: "",
-        image: "",
       },
-      products2: "",
-      updateSubmit: false,
+      mobils: "",
+      updateSubmitmobil: false,
     };
   },
   methods: {
@@ -325,54 +404,41 @@ export default {
           console.log(err);
         });
     },
-    loadbali() {
+    loadmobil() {
       axios
-        .get("http://localhost:3000/products2")
+        .get("http://localhost:3000/mobils")
         .then((res) => {
-          this.products2 = res.data; //respon dari rest api dimasukan ke users
+          this.mobils = res.data; //respon dari rest api dimasukan ke users
         })
         .catch((err) => {
           console.log(err);
         });
     },
     add() {
-      axios.post("http://localhost:3000/products/", this.form).then((res) => {
+      axios.post("http://localhost:3000/products/", this.form).then(() => {
         this.load();
-        (this.form.name = ""),
-          (this.form.bb = ""),
-          (this.form.cc = ""),
-          (this.form.iconkota = ""),
-          (this.form.image = "");
+        (this.form.name = ""), (this.form.bb = ""), (this.form.cc = "");
       });
     },
-    addproject() {
-      axios.post("http://localhost:3000/products2/", this.form).then((res) => {
-        this.loadbali();
-        (this.form.name = ""),
-          (this.form.bb = ""),
-          (this.form.cc = ""),
-          (this.form.iconkota = ""),
-          (this.form.image = "");
+    addmobil() {
+      axios.post("http://localhost:3000/mobils/", this.mobil).then(() => {
+        this.loadmobil();
+        (this.mobil.name = ""),
+          (this.mobil.bb = ""),
+          (this.mobil.cc = ""),
+          (this.mobil.iconname = ""),
+          (this.mobil.image = "");
       });
     },
-
+    // product
     edit(product) {
       this.updateSubmit = true;
       this.form.id = product.id;
       this.form.name = product.name;
       this.form.bb = product.bb;
       this.form.cc = product.cc;
-      this.form.iconkota = product.iconkota;
-      this.form.image = product.image;
     },
-    edit(product2) {
-      this.updateSubmit = true;
-      this.form.id = product2.id;
-      this.form.name = product2.name;
-      this.form.bb = product2.bb;
-      this.form.cc = product2.cc;
 
-    },
     update(form) {
       return axios
         .put("http://localhost:3000/products/" + form.id, {
@@ -386,39 +452,71 @@ export default {
           this.form.name = "";
           this.form.bb = "";
           this.form.cc = "";
-          this.form.iconkota = "";
-          this.form.image = "";
           this.updateSubmit = false;
         })
         .catch((err) => {
           console.log(err);
         });
     },
-    del(product) {
-      axios
-        .delete("http://localhost:3000/products/" + product.id)
-        .then((res) => {
-          this.load();
-          let index = this.products.indexOf(
-            form.name,
-            form.bb,
-            form.cc,
-          );
-          this.products.splice(index, 1);
+    // mobil
+    editmobil(mobil) {
+      this.updateSubmitmobil = true;
+      this.mobil.id = mobil.id;
+      this.mobil.name = mobil.name;
+      this.mobil.bb = mobil.bb;
+      this.mobil.cc = mobil.cc;
+    },
+    updatemobil(mobil) {
+      return axios
+        .put("http://localhost:3000/mobils/" + mobil.id, {
+          name: this.mobil.name,
+          bb: this.mobil.bb,
+          cc: this.mobil.cc,
+        })
+        .then(() => {
+          this.loadmobil();
+          this.mobil.id = "";
+          this.mobil.name = "";
+          this.mobil.bb = "";
+          this.mobil.cc = "";
+          this.updateSubmitmobil = false;
+        })
+        .catch((err) => {
+          console.log(err);
         });
     },
-    del(product2) {
-      axios
-        .delete("http://localhost:3000/products2/" + product2.id)
-        .then((res) => {
-          this.load();
-          let index = this.products2.indexOf(
-            form.name,
-            form.bb,
-            form.cc,
-          );
-          this.products2.splice(index, 1);
-        });
+    delmobil(mobil) {
+      axios.delete("http://localhost:3000/mobils/" + mobil.id).then(() => {
+        this.loadmobil();
+        let index = this.mobils.indexOf(mobil.name, mobil.bb, mobil.cc);
+        this.mobils.splice(index, 1);
+      });
+    },
+    del(product) {
+      axios.delete("http://localhost:3000/products/" + product.id).then(() => {
+        this.load();
+        let index = this.products.indexOf(
+          form.name,
+          form.bb,
+          form.cc,
+          form.iconname,
+          form.image
+        );
+        this.products.splice(index, 1);
+      });
+    },
+    // Detail Product
+    productDetail(product) {
+      this.form.id = product.id;
+      this.form.name = product.name;
+      this.form.bb = product.bb;
+      this.form.cc = product.cc;
+    },
+    // Detail Mobil
+    mobilDetail(mobil) {
+      this.form.id = mobil.id;
+      this.form.name = mobil.name;
+      this.form.bb = mobil.bb;
     },
     // close
     close() {
@@ -429,21 +527,13 @@ export default {
 </script>
 <style>
 .induk {
+  background-color: black;
   width: auto;
   margin-right: 10px;
 }
 
-.product {
-  justify-content: space-around;
-  font-family: "Bungee Inline", cursive;
-
-  width: auto;
-}
-.product label {
-  justify-content: center;
-}
-
 .btn1 button {
+  text-decoration: none;
   font-family: "Bungee Inline", cursive;
   color: white;
   background-color: black;
@@ -452,17 +542,19 @@ export default {
   text-align: center;
   border: 2px solid white;
 }
+
+.product {
+  display: block;
+}
 .btn11 button {
   background-color: black;
   width: 200px;
   margin-left: 550px;
 }
-.btn1 :hover {
-  background-color: black;
-  color: white;
-}
+
 .btn2 :hover {
   background-color: white;
+  color: black;
 }
 .table {
   margin-right: 40px;
@@ -491,9 +583,18 @@ export default {
   font-family: "Bungee Inline", cursive;
   width: 100px;
   background-color: black;
-  border-radius: 20px;
-  height: 50px;
-
+  border-radius: 10px;
+  height: 40px;
+  text-decoration: none;
   color: white;
+}
+.tr button:hover {
+  font-family: "Bungee Inline", cursive;
+  width: 100px;
+  background-color: white;
+  border-radius: 10px;
+  height: 40px;
+  text-decoration: none;
+  color: black;
 }
 </style>

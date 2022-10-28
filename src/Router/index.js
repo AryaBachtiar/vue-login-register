@@ -2,14 +2,15 @@ import Login from "../components/Login.vue";
 import Register from "../components/Register.vue";
 import Home from "../view/Home.vue";
 import Product from "../view/Product.vue";
-import Detail from "../view/Detail.vue"
+import Detail from "../view/Detail.vue";
+import Cart from "../view/Cart.vue";
 import Vue from "vue";
 import Router from "vue-router";
 
 Vue.use(Router);
 const routes = [
   {
-    path: "/",
+    path: "/login",
     name: "LoginPage",
     component: Login,
   },
@@ -33,6 +34,11 @@ const routes = [
     path: "/detail",
     name: "DetailVue",
     component: Detail,
+  },
+  {
+    path: "/cart",
+    name: "CartPage",
+    component: Cart,
   },
 ];
 // const router = createRouter({

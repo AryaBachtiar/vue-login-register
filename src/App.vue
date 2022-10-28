@@ -1,36 +1,34 @@
 <template>
   <div id="app">
-<router-view  />
+    <SideBar />
+    <!-- Kirim data ke child -->
+<router-view :cart="cart" :setCart="setCart" />
   </div>
 </template>
 
 <script>
-
+import SideBar from "./components/SideBar.vue"
 export default {
   name: 'App',
- computed: {
-    
-    userRole() {
-      return this.loggedIn && this.loggedIn.role;
-    }
+  components: {
+    SideBar
   },
-  methods:
-
-  {
- out() {
-      sessionStorage.clear();
-      this.$router.push("/");
-    },
-        logout() {
-      localStorage.clear();
-    },
+  data() {
+    return {
+      // Manampung Data Cart
+      cart: [],
+    };
+  },
+ 
+  methods:{
+    // Mengubah isi cart
+    setCart(cardBaru) {
+      this.cart = cardBaru;
+    }
+ 
   }
-  
 };
  
 
 </script>
 
-<style>
-
-</style>

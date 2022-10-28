@@ -1,93 +1,332 @@
-{
-  "akuns": [
-    {
-      "id": 1,
-      "username": "admin",
-      "password": "123",
-      "role": "admin"
-    },
-    {
-      "id": 2,
-      "username": "orang",
-      "password": "123",
-      "role": "user"
-    }
-  ],
-  "accs": [
-    {
-      "name": "Kawasaki H2R",
-      "bb": "Pertamax Turbo",
-      "cc": "1000cc",
-      "image": "https://images.autofun.co.id/file1/98f4d79923774641ac723eae8b857500_1125x630.jpg",
-      "id": 1
-    },
-    {
-      "name": "Honda Vario 160",
-      "bb": "Pertamax",
-      "cc": "160cc",
-      "image": "https://imgx.gridoto.com/crop/82x84:591x405/700x465/photo/2022/07/13/modifikasi-honda-vario-160-6jpg-20220713042820.jpg",
-      "id": 2
-    },
-    {
-      "name": "Yamaha R25",
-      "bb": "Pertamax Turbo",
-      "cc": "250cc",
-      "image": "https://i0.wp.com/motoblast.org/wp-content/uploads/2020/04/render-R25-v3-1.jpg?fit=1600%2C1065&ssl=1",
-      "id": 3
-    },
-    {
-      "name": "Kawasaki ZX-25R",
-      "bb": "Pertamax Turbo",
-      "cc": "250cc",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Kawasaki_Ninja_ZX-25R_mid-year_2021.jpg",
-      "id": 4
-    },
-    {
-      "name": "Yamaha R15 v4",
-      "bb": "Pertamax",
-      "cc": "150cc",
-      "image": "https://awsimages.detik.net.id/community/media/visual/2021/12/01/yamaha-r15m-1.jpeg?w=4770",
-      "id": 5
-    }
-  ],
-  "products": [
-    {
-      "name": "Kawasaki H2R",
-      "bb": "Pertamax Turbo",
-      "cc": "1000cc",
-      "id": 1
-    },
-    {
-      "name": "Honda Vario 160",
-      "bb": "Pertamax",
-      "cc": "160cc",
-      "id": 2
-    },
-    {
-      "name": "Kawasaki ZX-25R",
-      "bb": "Pertamax Turbo",
-      "cc": "250cc",
-      "id": 4
-    },
-    {
-      "name": "Yamaha R15 v4",
-      "bb": "Pertamax",
-      "cc": "150cc",
-      "id": 5
-    }
-  ],
-  "products2": [
-    {
-      "name": "Nissan Skyline R34",
-      "bb": "1999",
-      "cc": "2.600",
-      "id": 1
-    },
-    {
-      "name": "Toyota GR Supra",
-      "bb": "2020",
-      "cc": "2.998cc",
-      "id": 2
-    }
-  ]
+{ 
+  "akuns": [ 
+    { 
+      "id": 0, 
+      "username": "Admin", 
+      "password": "binus", 
+      "pin": "123", 
+      "role": "admin" 
+    }, 
+    { 
+      "id": 1, 
+      "username": "User", 
+      "password": "cerdas", 
+      "pin": "222", 
+      "role": "user" 
+    } 
+  ], 
+  "makananinstans": [ 
+    { 
+      "name": "Samyang Hot Chicken Ramen", 
+      "image": "https://cf.shopee.co.id/file/5eca32931ceccba726765fa8529b86a2", 
+      "deskripsi": "Mi instan dari Korea Selatan ini memiliki mi yang kenyal dan gurih dengan cita rasa super pedas. Tekstur mi dan rasa pedas yang khas membuat mi instan ini diburu oleh para penggemar", 
+      "category": "Makanan Instan", 
+      "type": "Mieggasd", 
+      "harga": 15000, 
+      "id": 1 
+    }, 
+    { 
+      "id": 2, 
+      "name": " Fiesta Spicy Nugget", 
+      "type": "Nugget", 
+      "deskripsi": "Fiesta Spicy Nugget merupakan makanan instan berupa nugget yang terbuat dari daging ayam pilihan yang dikemas secara higienis, sehat dan praktis.", 
+      "harga": 54000, 
+      "category": "Makanan Instan", 
+      "image": "https://cf.shopee.co.id/file/825490097371c5dd68b7ef3cf5fe1eee" 
+    }, 
+    { 
+      "id": 3, 
+      "name": "Koko Krunch", 
+      "type": "Sereal", 
+      "deskripsi": "Koko Krunch 330g sereal sarapan dengan gandum utuh dan coklat. Sereal sarapan dengan sumber vitamin (B2, B3, B5, B6, B9), zat besi, kalsium, dan serat pangan", 
+      "harga": 34000, 
+      "category": "Makanan Instan", 
+      "image": "https://cf.shopee.co.id/file/cd397b179f02cbc97bed004c39bcbadf" 
+    } 
+  ], 
+  "makananringans": [ 
+    { 
+      "name": "Cadbury Dairy Milk", 
+      "image": "https://cf.shopee.co.id/file/9e158aed4277d044df4e67051c522521", 
+      "deskripsi": "Blok Cadbury Dairy Milk Black Forest adalah kombinasi lezat dari jeli rasa Cherry dan potongan biskuit yang dicampur dengan Susu Susu favorit Australia, cokelat susu.", 
+      "category": "Makanan Ringan", 
+      "harga": 10000, 
+      "id": 1 
+    }, 
+    { 
+      "id": 2, 
+      "name": "Fitbar Tiramisu 25gr", 
+      "deskripsi": "Snack Multigrain dibalut cokelat pertama di Indonesia. Terbuat dari oat Australia, premium corn flakes, rice crispy dan ekstrak kopi asli. Snack Multigrain yg kaya akan serat. #EnaknyaMultigrain untuk hidup yang lebih sehat.", 
+      "type": "Snack Sehat", 
+      "harga": 15000, 
+      "category": "Makanan Ringan", 
+      "image": "https://cf.shopee.co.id/file/48c06f3b027599815e9ad8b9e3760c9c" 
+    }, 
+    { 
+      "id": 3, 
+      "name": "Chitato Lite rasa Rumput Laut 68gr ", 
+      "deskripsi": "Gurihnya rumput laut berpadu dengan renyahnya 100% potongan kentang asli yang diiris lebih tipis, bikin Chitato Lite punya rasa yang sempurna di setiap gigitan. Jadikan setiap momen dalam hidup kamu berasa lebih ringan karena Chitato Lite, #LiteUpYourLife!", 
+      "type": "Keripik", 
+      "harga": 10000, 
+      "category": "Makanan Ringan", 
+      "image": "https://cf.shopee.co.id/file/d26d68e77a0b9c16e82760debdcc7aa7" 
+    } 
+  ], 
+  "minumandingins": [ 
+    { 
+      "id": 1, 
+      "name": "NESCAFE Ice Black ", 
+      "deskripsi": "NESCAFE ala cafe dengan perpaduan rasa yang pas, menghadirkan sensasi ala cafe di setiap teguknya. Nikmati kopi dengan kualitas dan pilihan rasa ala cafe yang siap membuat momen kamu menjadi momen ala cafe kapan saja dimana saja. Pilih rasa kopimu, nikmatnya Latte yang lembut dengan kekentalan sempurna, Caramel Macchiato yang manis siap memanjakan lidah, Cappuccino yang kaya rasa dengan perpaduan kopi yang pas atau Ice black yang halus namun memberikan rasa mantap. Es kopi rasa ala cafe", 
+      "type": "Minuman", 
+      "harga": 8000, 
+      "image": "https://laz-img-sg.alicdn.com/p/7c491af44ee69ab874ea25f3d629bc10.jpg" 
+    }, 
+    { 
+      "id": 2, 
+      "name": "Coca Cola Kaleng", 
+      "deskripsi": "Coca-Cola Minuman Berkarbonasi Rasa Kola. Coca-Cola adalah minuman ringan paling populer dan paling laris dalam sejarah, serta salah satu merek yang paling dikenal di dunia.", 
+      "type": "Minuman", 
+      "harga": 8000, 
+      "image":"https://images.tokopedpedia.net/img/cache/700/product-1/2019/2/2/3774849/3774849_5618517c-09f9-426b-9ade-2ace6a915069_554_554.jpg" 
+    }, 
+    { 
+      "id": 3, 
+      "name": "Minuman Cincau Cap Panda", 
+      "deskripsi": "Minuman dengan cincau alami yang tinggi serat, rendah kalori, dan kaya akan mineral yang cocok untuk menemani Anda beraktivitas setiap hari.", 
+      "type": "Minuman", 
+      "harga": 6000, 
+      "image": "https://assets.klikindomaret.com/share/20046319/20046319_1.jpg" 
+    } 
+  ], 
+  "minumaninstants": [ 
+    { 
+      "id": 1, 
+      "name": "Torabika Cappucino Pounch isi 10 * 25gr ", 
+      "deskripsi": "Torabika Cappucino bubuk kopi instan yang terbuat dari biji kopi pilihan dengan ekstrak cappucino yang membuat rasa kopi torabika cappucino menjadi sempurna menghasilkan rasa yang nikmat di setiap tegukannya.", 
+      "type": "Kopi Instant", 
+      "harga": 20000, 
+      "category": "Minuman Instant", 
+      "image": "https://images.tokopedia.net/img/cache/500-square/VqbcmM/2021/11/1/53fc0636-2a59-43a6-8158-a50a26505eeb.png" 
+    }, 
+    { 
+      "id": 2, 
+      "name": "Hilo Chocolate Taro sachet isi 10", 
+      "deskripsi": "Minuman bubuk rasa Chocolate Taro yang tinggi kalsium. Gurih dan nikmatnya Chocolate Taro bikin rasanya juara banget! ", 
+      "type": "Minuman Serbuk", 
+      "harga": 15000, 
+      "category": "Minuman Instant", 
+      "image": "https://cf.shopee.co.id/file/a5dc856ff8052d522349c5d761e3ab38" 
+    }, 
+    { 
+      "id": 3, 
+      "name": "Milo Active-GO sachet isi 11", 
+      "deskripsi": "Dalam setiap gelas Milo mengandung kebaikan alami yang terdiri dari ekstrak malt sumber energi yang baik, bubuk kakao, susu sebagai sumber protein dan kalsium, dan juga tinggi vitamin", 
+      "type": "Susu Bubuk", 
+      "harga": 18000, 
+      "category": "Minuman Instant", 
+      "image": "https://images.tokopedia.net/img/cache/500-square/product-1/2020/7/25/106541264/106541264_aa840a64-7b09-4c76-b942-d64b11be2a1a_1024_1024" 
+    } 
+  ], 
+  "obats": [ 
+    { 
+      "id": 1, 
+      "name": "Bodrex Migran", 
+      "deskripsi": "Bodrex Migra. Solusi Khusus Migrain! Manfaat Meringankan sakit kepala pada migrain.", 
+      "type": "Obat Sakit Kepala", 
+      "category": "Obat", 
+      "harga": 3000, 
+      "image": "https://images.tokopedia.net/img/cache/500-square/VqbcmM/2021/2/8/b09b9852-bf55-4c91-8a1e-baad755d9138.jpg" 
+    }, 
+    { 
+      "id": 2, 
+      "name": "Tolak Angin", 
+      "deskripsi": "Produk obat herbal berupa cairan untuk mengatasi masuk angin. Orang pintar, minum tolak angin!", 
+      "category": "Obat", 
+      "harga": 4000, 
+      "type": "Obat Masuk Angin", 
+      "image": "https://images.tokopedia.net/img/cache/500-square/product-1/2020/3/26/8102148/8102148_544e172f-c1b9-4454-b849-5e2051e5b5ed_1080_1080.jpg" 
+    }, 
+    { 
+      "id": 3, 
+      "name": "Mylanta", 
+      "deskripsi": "Mylanta membantu meredakan gejala sakit maag karena asam lambung yang berlebih. Mylanta bekerja di sumber gejala dan cepat redakan sakit maag", 
+      "category": "Obat", 
+      "type": "Obat Maag", 
+      "harga": 15000, 
+      "image": "https://assets.klikindomaret.com/share/20021454/20021454_1.jpg" 
+    } 
+  ], 
+  "perlengkapansekolahs": [ 
+    { 
+      "id": 1, 
+      "name": "Toxi Backpack", 
+      "type": "Tas Sekolah", 
+      "category": "Perlengkapan Sekolah", 
+      "image": "https://cf.shopee.co.id/file/470589a2fe9227b3ca4f9f43017e0070", 
+      "harga": 60000, 
+      "deskripsi": "Toxi Backpack, tas ransel dengan kapasitas penyimpanan besar. Warna yang menggemaskan, cocok untuk para remaja perempuan. " 
+    }, 
+    { 
+      "id": 2, 
+      "name": "Old School Sneakers", 
+      "type": "Sepatu Sekolah", 
+      "category": "Perlengkapan Sekolah", 
+      "image": "https://asset-a.grid.id/crop/0x0:0x0/700x0/photo/2019/02/12/3289966721.jpg", 
+      "harga": 100000, 
+      "deskripsi": "Old School Sneakers adalah sepatu yang memiliki desain simpel namun awet dan kuat." 
+    }, 
+    { 
+      "id": 3, 
+      "name": "Kerudung Saudia Rawis Putih", 
+      "type": "Kerudung Sekolah", 
+      "category": "Perlengkapan Sekolah", 
+      "image": "https://s3.bukalapak.com/img/8109612075/large/0_0b394ce7_b805_4dc4_a6f5_f4463a91d415_665_692.jpg", 
+      "harga": 30000, 
+      "deskripsi": "Kerudung Saudia Rawis Putih bahan tidak terawang, nyaman dipakai, dengan desain yang simple. Cocok untuk dipakai sekolah." 
+    } 
+  ], 
+  "alattulis": [ 
+    { 
+      "id": 1, 
+      "name": "Deli Pencil Pounch", 
+      "deskripsi": "Deli Pencil Pouch/Tempat Pensil Penyimpanan Besar design simple dan aesthetic. Tersedia dalam dua pilihan warna, biru dan abu-abu.", 
+      "type": "Tempat Alat Tulis", 
+      "harga": 16000, 
+      "category": "Alat tulis", 
+      "image": "https://cf.shopee.co.id/file/bf81554b7481a6b829b1013d1fb1e465" 
+    }, 
+    { 
+      "id": 2, 
+      "name": "Gel Pen GP-266 (iTech 2)", 
+      "deskripsi": "Hasil goresannya tipis dan tidak mudah menembus kertas. Berkat tip berbentuk needle dengan ukuran 0,28 mm, tinta yang dihasilkan tidak terlalu tebal.", 
+      "type": "Pulpen", 
+      "harga": 2000, 
+      "category": "Alat tulis", 
+      "image": "https://img.my-best.id/press_component/item_part_images/6f31384cecde0b11a5aadc1964cca692.png?ixlib=rails-4.2.0&q=70&lossless=0&w=640&h=640&fit=clip" 
+    }, 
+    { 
+      "id": 3, 
+      "name": "Deli Loose Leaf Notebook B5", 
+      "deskripsi": "Notebook yang mudah dibawa. Desain yang simple dan elegan, cocok untuk menulis catatan harian.", 
+      "type": "Buku Tulis", 
+      "harga": 10000, 
+      "category": "Alat tulis", 
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGeanlpJuQQ6w8ANz6shgVzdkbzk_TqNhYnQ&usqp=CAU" 
+    } 
+  ], 
+  "bukus": [ 
+    { 
+      "id": 1, 
+      "name": "Kemala Volume 1", 
+      "deskripsi": "Kemala yang tiba-tiba terbangun dan sudah berada di alam yang berbeda. Dari sudut pandang Kemala, kamu akan merasakan menjadi hantu dengan berbagai cerita tragis dari hantu-hantu yang ditemuinya.", 
+      "type": "Komik", 
+      "harga": 30000, 
+      "category": "Buku", 
+      "image": "https://www.gramedia.com/blog/content/images/2021/08/9786230300653_KEMALA_01.jpg" 
+    }, 
+    { 
+      "id": 2, 
+      "name": "Hujan - Tere Liye", 
+      "deskripsi": "Novel yang menceritakan tentang persahabatan, permasalahan hidup, hingga kisah cinta remaja. Menjadikan novel ini menjadi best seller.", 
+      "type": "Novel", 
+      "harga": 75000, 
+      "category": "Buku", 
+      "image": "https://cdnwpseller.gramedia.net/wp-content/uploads/2021/11/09215255/Hujan.jpg" 
+    }, 
+    { 
+      "id": 3, 
+      "name": "Babad Tanah Jawi", 
+      "deskripsi": "Babad Tanah Jawi merupakan karya ensiklopedis yang dimulai dari Adam maupun dewa-dewa Hindu, menceritakan masa pra-Islam yang legendaris dalam sejarah Jawa, dan mencapai puncaknya abad XVII atau XVIII”.", 
+      "type": "Ensiklopedia Sejarah", 
+      "harga": 20000, 
+      "category": "Buku", 
+      "image": "https://cdn.gramedia.com/uploads/items/babad.jpg" 
+    } 
+  ], 
+  "alatmakans": [ 
+    { 
+      "id": 1, 
+      "name": "Botol Minum Nice", 
+      "deskripsi": "Botol minum kaca Nice, dengan desain simple dan warna pastel. Cocok di bawa ke mana pun.", 
+      "type": "Botol Minum", 
+      "harga": 18000, 
+      "category": "Peralatan Makan", 
+      "image": "https://cf.shopee.co.id/file/ba97ffcd1f26193de8059dc2d3ca5138" 
+    }, 
+    { 
+      "id": 2, 
+      "name": "Set Alat Makan", 
+      "deskripsi": "Set alat makan 3 in 1. Sendok, garpu, dan sumpit dalam satu set. Dengan desain keramik yang elegan!", 
+      "type": "Sendok", 
+      "harga": 6000, 
+      "category": "Peralatan Makan", 
+      "image": "https://id-test-11.slatic.net/p/c370bd28b278622e3a0533952a09c9fb.jpg" 
+    }, 
+    { 
+      "id": 3, 
+      "name": "Kotak Bekal Look", 
+      "deskripsi": "Kotak bekal dengan kapasitas sedang, cocok untuk bekal makan siang yang banyak. Warna yang lucu, membuat suasana makan lebih menyenangkan.", 
+      "type": "Kotak Bekal", 
+      "harga": 9000, 
+      "category": "Peralatan Makan", 
+      "image": "https://sc04.alicdn.com/kf/H9f3eb0b2c6a4440fac78dd9d149116bdB.jpg" 
+    } 
+  ],"alatkebersihans": [ 
+    { 
+      "id": 1, 
+      "name": "Sapu Ijuk Swan", 
+      "deskripsi": "Sapu ijuk swan kualitas terbaik. Ijuk yang tebal lebih cepat untuk membersihkan lantai!", 
+      "category": "Alat Kebersihan", 
+      "harga": 15000, 
+      "type": "Sapu Lantai", 
+      "image": "https://s0.bukalapak.com/img/59029162652/large/data.jpeg" 
+    }, 
+    { 
+      "id": 2, 
+      "name": "Kain Pel Dragon", 
+      "deskripsi": "Kain pel dragon murah dan bagus, cocok untuk di rumah anda dengan kain yg bagus dan menyerap menjadikan ubin atau keramik anda bersih.", 
+      "category": "Alat Kebersihan", 
+      "harga": 18000, 
+      "type": "Pel Lantai", 
+      "image": "https://images.tokopedia.net/img/cache/500-square/product-1/2020/6/4/29220746/29220746_2f46cda8-c04a-4fa0-98b9-22cc7925f14f_1800_1800" 
+    }, 
+    { 
+      "id": 3, 
+      "name": "Kemoceng Sintetis", 
+      "deskripsi": "Kemoceng dengan bulu sintetis yang halus, membersihkan debu dengan cepat dan bersih.", 
+      "category": "Alat Kebersihan", 
+      "harga": 11000, 
+      "type": "Kemoceng", 
+      "image": "https://id-live-01.slatic.net/p/114523b22b346b00ec12bd95e5b51269.jpg" 
+    } 
+  ], 
+  "mainans": [ 
+    { 
+      "id": 1, 
+      "name": "Boneka Boba", 
+      "category": "Mainan", 
+      "deskripsi": "Boneka Boba dengan desain lucu dan menggemaskan siap menemani hari-harimu.", 
+      "harga": 30000, 
+      "type": "Boneka", 
+      "image": "https://images.tokopedia.net/img/cache/700/VqbcmM/2021/4/18/cd79599b-3cfe-4435-b5bc-d07898cd12f8.jpg" 
+    }, 
+    { 
+      "id": 2, 
+      "name": "Action Figure Gojo Satoru", 
+      "category": "Mainan", 
+      "deskripsi": "Penggemar Jujutsu Kaisen wajib punya Action Figure Gojo Satoru ini. Dengan desain chibi siap memenuhi koleksi action figure kalian.", 
+      "harga": 35000, 
+      "type": "Action Figure", 
+      "image": "https://lzd-img-global.slatic.net/g/p/e50e1a7b113f421afe179878f3c52e0b.jpg_720x720q80.jpg_.webp" 
+    }, 
+    { 
+      "id": 3, 
+      "name": "Pushee the Cat Squisy", 
+      "category": "Mainan", 
+      "deskripsi": "Pushee the Cat Squisy terbuat dari bahan yang berkualitas, memastikan Pushee the Cat Squisy tahan lama dan menggemaskan.", 
+      "harga": 30000, 
+      "type": "Squishy", 
+      "image": "https://images-na.ssl-images-amazon.com/images/I/31VqdJXDY7L.jpg" 
+    } 
+  ] 
 }

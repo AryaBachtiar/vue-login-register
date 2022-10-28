@@ -15,21 +15,50 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item" v-if="adminAccess ">
+          <li class="nav-item" v-if="adminAccess">
             <a class="nav-link active" aria-current="page" href="/home">Home</a>
           </li>
-          <li class="nav-item" v-if="adminAccess"><router-link class="nav-link active" aria-current="page"  to="/about">About</router-link></li>
-          <li class="nav-item" v-if="adminAccess ">
-            <router-link class="nav-link active" aria-current="page" to="/about">Kendaraan</router-link>
+          <li class="nav-item">
+            <router-link class="nav-link active" aria-current="page" to="/about"
+              >About</router-link
+            >
           </li>
           <li class="nav-item">
-            <router-link class="nav-link active" aria-current="page" to="/product">Produk</router-link>
+            <router-link class="nav-link active" aria-current="page" to="/about"
+              >Contact</router-link
+            >
           </li>
           <li class="nav-item">
-            <router-link class="nav-link active" aria-current="page" to="/detail">Detail</router-link>
+            <router-link
+              class="nav-link active"
+              aria-current="page"
+              to="/product"
+              >Produk</router-link
+            >
+          </li>
+          <li class="nav-item" v-if="adminAccess">
+            <router-link
+              class="nav-link active"
+              aria-current="page"
+              to="/detail"
+              >Detail</router-link
+            >
           </li>
         </ul>
-          <a class="btn btn-outline-success d-flex" @click="out()" type="submit">Logout</a>
+        <!-- Cart Navigation -->
+        <ul class="navbar-nav ms auto">
+          <li class="nav-item">
+            <router-link class="nav-link" to="/cart">Cart</router-link>
+          </li>
+          <li class="nav-item ms 4">
+            <a
+              class="btn btn-outline-success d-flex"
+              @click="out()"
+              type="submit"
+              >Logout</a
+            >
+          </li>
+        </ul>
       </div>
     </div>
   </nav>
@@ -39,7 +68,7 @@ export default {
   name: "NavBar",
   computed: {
     adminAccess() {
-      return sessionStorage.getItem("USER") ==="admin";
+      return sessionStorage.getItem("USER") === "admin";
     },
   },
   methods: {

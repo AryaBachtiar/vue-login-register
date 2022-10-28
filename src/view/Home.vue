@@ -3,78 +3,103 @@
     <NavBar />
 
     <div class="induk" style="background-color: white">
-    
-
       <!-- Button trigger modal -->
-      <br>
+      <br />
       <div class="btn-add">
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  ADD
-</button>
-</div>
-<br>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Form <span v-show="!updateSubmitacc">Tambah</span> <span v-show="!updateSubmitacc">Update</span></h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button
+          type="button"
+          class="btn btn-primary"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal"
+        >
+          ADD
+        </button>
       </div>
-        <form id="atas" @submit.prevent="add">
-        <div class="jakartaa">
-          <input type="hidden" v-model="form.id" />
-          <div>
-            <label for="">Nama Kendaraan</label>
-            <br>
-            <input type="text" v-model="form.name" required />
-          </div>
-          <br />
-          <div>
-            <label for="">Bahan Bakar</label>
-            <br>
-            <input type="text" v-model="form.bb" required />
-          </div>
-          <br />
-          <div>
-            <label for="">CC</label>
-            <br>
-            <input type="text" v-model="form.cc" required />
-          </div>
-          <br />
-          <div>
-            <label for="">Gambar</label>
-            <br>
-            <input type="text" v-model="form.iconkota" required />
-          </div>
-          <br />
+      <br />
 
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">
+                Form <span v-show="!updateSubmitacc">Tambah</span>
+                <span v-show="!updateSubmitacc">Update</span>
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <form id="atas" @submit.prevent="add">
+              <div class="jakartaa">
+                <input type="hidden" v-model="form.id" />
+                <div>
+                  <label for="">Nama Kendaraan</label>
+                  <br />
+                  <input type="text" v-model="form.name" required />
+                </div>
+                <br />
+                <div>
+                  <label for="">Bahan Bakar</label>
+                  <br />
+                  <input type="text" v-model="form.bb" required />
+                </div>
+                <br />
+                <div>
+                  <label for="">CC</label>
+                  <br />
+                  <input type="text" v-model="form.cc" required />
+                </div>
+                <br />
+                <div>
+                  <label for="">Gambar</label>
+                  <br />
+                  <input type="text" v-model="form.iconkota" required />
+                </div>
+                <br />
+              </div>
+              <div class="btn1">
+                <button type="submit" v-show="!updateSubmit">Tambahkan</button>
+                <button
+                  type="button"
+                  v-show="updateSubmit"
+                  @click="update(form)"
+                >
+                  <i class="fas fa-wrench">Update</i>
+                </button>
+                <!-- jika tombol edit di klik maka tombol add akan berubah menjadi update -->
+              </div>
 
+              <!-- jika tidak update maka tombol update tidak muncul -->
+            </form>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+                @click="close"
+              >
+                Close
+              </button>
+              <button type="button" class="btn btn-primary" @click="close">
+                Save
+              </button>
+            </div>
+          </div>
         </div>
-         <div class="btn1">
-          <button type="submit" v-show="!updateSubmit">Tambahkan</button> 
-          <button type="button" v-show="updateSubmit" @click="update(form)">
-            <i class="fas fa-wrench">Update</i>
-          </button> 
-          <!-- jika tombol edit di klik maka tombol add akan berubah menjadi update -->
-        </div>
-        
-          <!-- jika tidak update maka tombol update tidak muncul -->
-          
-      </form>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" @click="close">Close</button>
-        <button type="button" class="btn btn-primary"  @click="close">Save</button>
-       
       </div>
-    </div>
-  </div>
-</div>
 
       <table class="table" border="1" style="width: 90%">
         <tr class="tr">
-
           <th>No</th>
           <th>Nama</th>
           <th>Bahan Bakar</th>
@@ -83,10 +108,10 @@
           <th>Action</th>
         </tr>
 
-        <tr class="tr" v-for="(acc,index) in accs" :key="acc.id">
-            <td>
-                <span class="bb">{{ index +1}}</span>
-            </td>
+        <tr class="tr" v-for="(acc, index) in accs" :key="acc.id">
+          <td>
+            <span class="bb">{{ index + 1 }}</span>
+          </td>
           <td>
             <span class="bb"> {{ acc.name }}</span> &#160;
           </td>
@@ -101,7 +126,12 @@
             &#160;
           </td>
           <td class="btn2">
-            <button data-bs-toggle="modal" data-bs-target="#exampleModal" class="aa" @click="edit(acc)">
+            <button
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+              class="aa"
+              @click="edit(acc)"
+            >
               <i class="fas fa-wrench"></i>Edit
             </button>
             <button class="aa" @click="del(acc)">
@@ -197,24 +227,22 @@ export default {
         });
     },
     del(acc) {
-      axios
-        .delete("http://localhost:3000/accs/" + acc.id)
-        .then((res) => {
-          this.load();
-          let index = this.accs.indexOf(
-            form.name,
-            form.bb,
-            form.cc,
-            form.iconkota,
-            form.image
-          );
-          this.accs.splice(index, 1);
-        });
+      axios.delete("http://localhost:3000/accs/" + acc.id).then((res) => {
+        this.load();
+        let index = this.accs.indexOf(
+          form.name,
+          form.bb,
+          form.cc,
+          form.iconkota,
+          form.image
+        );
+        this.accs.splice(index, 1);
+      });
     },
-    // Close 
+    // Close
     close() {
       window.location.realod();
-    }
+    },
   },
 };
 </script>
@@ -232,7 +260,7 @@ export default {
   justify-content: space-around;
   font-family: "Bungee Inline", cursive;
   gap: 5px;
-margin-left: 10px;
+  margin-left: 10px;
   width: auto;
 }
 .jakartaa label {
@@ -250,8 +278,8 @@ margin-left: 10px;
   border: 2px solid black;
 }
 
-.btn-add{
-    margin-left: 1150px;
+.btn-add {
+  margin-left: 1150px;
 }
 
 .btn1 :hover {
@@ -297,6 +325,6 @@ margin-left: 10px;
   border: 2px solid black;
 }
 .kembali {
-    text-align: center;
+  text-align: center;
 }
 </style>
